@@ -95,7 +95,7 @@ class Server extends Connection
             $connection->enableEncryption(true, $connection::ENCRYPTION_TLS);
         }
 
-        $buffer     = $connection->read(2048);
+        $buffer     = $connection->read(2048, 0, false);
         $request    = $this->getRequest();
         $request->parse($buffer);
 
