@@ -191,7 +191,7 @@ class Client extends Connection
                 'Sec-WebSocket-Version: 13' . CRLF . CRLF
         );
 
-        $buffer   = $connection->read(2048);
+        $buffer   = $connection->read(2048, 0, false);
         $response = $this->getResponse();
         $response->parse($buffer);
 
